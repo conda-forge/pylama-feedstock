@@ -1,8 +1,8 @@
 {% set name = "pylama" %}
-{% set version = "7.4.1" %}
+{% set version = "7.4.3" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "466f1f1d8d81c90db6c54f02ecc7e0238cc79350409751e84e67f73ef54f2a6d" %}
+{% set hash = "390c1dab1daebdf3d6acc923e551b035c3faa77d8b96b98530c230493f9ec712" %}
 {% set build = 0 %}
 
 package:
@@ -15,6 +15,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   preserve_egg_dir: True
   entry_points:
     - pylama = pylama.main:shell
