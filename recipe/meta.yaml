@@ -1,8 +1,8 @@
 {% set name = "pylama" %}
-{% set version = "7.4.3" %}
+{% set version = "7.5.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "390c1dab1daebdf3d6acc923e551b035c3faa77d8b96b98530c230493f9ec712" %}
+{% set hash = "db15baddbb2d79e0911058d3e0fd53029ebf5aab00991ef71329bffe879a05f3" %}
 {% set build = 0 %}
 
 package:
