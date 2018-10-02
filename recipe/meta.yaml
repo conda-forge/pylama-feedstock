@@ -1,33 +1,25 @@
-{% set name = "pylama" %}
-{% set version = "7.4.3" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "390c1dab1daebdf3d6acc923e551b035c3faa77d8b96b98530c230493f9ec712" %}
-{% set build = 0 %}
+{% set version = "7.5.5" %}
 
 package:
-  name: {{ name|lower }}
+  name: pylama
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/p/pylama/pylama-{{ version }}.tar.gz
+  sha256: 4679ecfda28344d232e2ea997a1e3c84a241c8a68aab39e4da59179d14e3e7fd
 
 build:
+  number: 0
   noarch: python
-  preserve_egg_dir: True
   entry_points:
     - pylama = pylama.main:shell
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - setuptools
@@ -50,7 +42,7 @@ about:
   license_file: LICENSE
   license: LGPL 3.0
   license_family: LGPL
-  summary: 'Code audit tool for Python and JavaScript.'
+  summary: 'Code audit tool for Python and JavaScript'
   dev_url: https://github.com/klen/pylama
   doc_url: https://pylama.readthedocs.io/en/latest/
 
