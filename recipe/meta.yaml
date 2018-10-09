@@ -1,4 +1,4 @@
-{% set version = "7.5.5" %}
+{% set version = "7.6.2" %}
 
 package:
   name: pylama
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pylama/pylama-{{ version }}.tar.gz
-  sha256: 4679ecfda28344d232e2ea997a1e3c84a241c8a68aab39e4da59179d14e3e7fd
+  sha256: c4c1a348055c90433f0cd1ec136d458afd839ed287b8633d5673c3a9a16cd415
 
 build:
   number: 0
