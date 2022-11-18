@@ -1,4 +1,4 @@
-{% set version = "7.7.1" %}
+{% set version = "8.2.0" %}
 
 package:
   name: pylama
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pylama/pylama-{{ version }}.tar.gz
-  sha256: 9bae53ef9c1a431371d6a8dca406816a60d547147b60a4934721898f553b7d8f
+  sha256: f21f762904741d9a92a22c4ee7ab8321a5be2d3324631ce3f296dea429d60b49
 
 build:
   number: 0
   noarch: python
   entry_points:
     - pylama = pylama.main:shell
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 
 requirements:
@@ -38,11 +38,11 @@ test:
     - pylama --help
 
 about:
-  home:  https://github.com/klen/pylama
+  home: https://github.com/klen/pylama
   license_file: LICENSE
   license: LGPL 3.0
   license_family: LGPL
-  summary: 'Code audit tool for Python and JavaScript'
+  summary: Code audit tool for Python and JavaScript
   dev_url: https://github.com/klen/pylama
   doc_url: https://pylama.readthedocs.io/en/latest/
 
